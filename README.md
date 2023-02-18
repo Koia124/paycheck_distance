@@ -8,4 +8,4 @@
   3) Go in es_extended/server/common.lua line 96 and remove the StartPayCheck function
   
 ## ADD RESOURCE TO YOUR SERVER CFG
-  5) Go in your server.cfg and add: start paycheck_distance
+  1) Go in your server.cfg and add: start paycheck_distance
