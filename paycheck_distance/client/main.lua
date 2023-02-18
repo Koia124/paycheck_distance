@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-local Intervallo = Config.Interval*60000
+local Times = Config.Interval*60000
 
 Citizen.CreateThread(function()
     while true do
@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
                     end
                 end
             end)
-            Citizen.Wait(Intervallo)
+            Citizen.Wait(Times)
         end
     end
 end)
