@@ -6,12 +6,12 @@ ESX.RegisterServerCallback("paycheck", function(source, cb)
 
    if xPlayer then
 
-    local salario = xPlayer.job.grade_salary
+    local salary = xPlayer.job.grade_salary
 
     
 
-    cb(salario)
-    xPlayer.addAccountMoney('bank', salario) 
+    cb(salary)
+    xPlayer.addAccountMoney('bank', salary) 
     
    end
 end)
