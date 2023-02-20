@@ -1,7 +1,7 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-ESX.RegisterServerCallback("paycheck", function(source, cb) 
+ESX.RegisterServerCallback("paycheck:paycheck", function(source, cb) 
    local xPlayer = ESX.GetPlayerFromId(source) 
 
    if xPlayer then
@@ -16,7 +16,7 @@ ESX.RegisterServerCallback("paycheck", function(source, cb)
    end
 end)
 
-ESX.RegisterServerCallback("checkjb", function(source, cb) 
+ESX.RegisterServerCallback("paycheck:checkjb", function(source, cb) 
     local xPlayer = ESX.GetPlayerFromId(source) 
  
     if xPlayer then
