@@ -7,17 +7,17 @@ Citizen.CreateThread(function()
     end
 end)
 
-local Intervallo = Config.Interval*60000
+local Times = Config.Interval*60000
 
 Citizen.CreateThread(function()
     while true do
         for _,job in pairs(Config.Jobs) do
             local playerPos = GetEntityCoords(player)
-            ESX.TriggerServerCallback('checkjb', function(Job)
+            ESX.TriggerServerCallback('paycheck:checkjb', function(Job)
                 if job.distMin == true then
                     if Job == _ then
-                        if GetDistanceBetweenCoords(job.pos, GetEntityCoords(PlayerPedId())) < job.dist then
-                            ESX.TriggerServerCallback("paycheck", function(sal) 
+                        if GetDistanceBetweenCoords(job.pos, GetEntityCoords(PlayerPedId())) <= job.dist then
+                            ESX.TriggerServerCallback("paycheck:paycheck", function(sal) 
                                 ESX.ShowNotification(Config.Language.Received..": "..sal)
                             end)
                         else
@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
                     end
                 end
             end)
-            Citizen.Wait(Intervallo)
+            Citizen.Wait(Times)
         end
     end
 end)

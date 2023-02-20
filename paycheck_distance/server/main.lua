@@ -1,22 +1,22 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-ESX.RegisterServerCallback("paycheck", function(source, cb) 
+ESX.RegisterServerCallback("paycheck:paycheck", function(source, cb) 
    local xPlayer = ESX.GetPlayerFromId(source) 
 
    if xPlayer then
 
-    local salario = xPlayer.job.grade_salary
+    local salary = xPlayer.job.grade_salary
 
     
 
-    cb(salario)
-    xPlayer.addAccountMoney('bank', salario) 
+    cb(salary)
+    xPlayer.addAccountMoney('bank', salary) 
     
    end
 end)
 
-ESX.RegisterServerCallback("checkjb", function(source, cb) 
+ESX.RegisterServerCallback("paycheck:checkjb", function(source, cb) 
     local xPlayer = ESX.GetPlayerFromId(source) 
  
     if xPlayer then
